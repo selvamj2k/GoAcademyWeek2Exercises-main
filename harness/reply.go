@@ -54,7 +54,7 @@ func NewReply(r *http.Response, err error) (Reply, error) {
 		err = fmt.Errorf("%w: %d: %s", ErrUnexpectedStatusCode, r.StatusCode,
 			http.StatusText(r.StatusCode))
 	}
-
+	fmt.Println("body", string(b))
 	return Reply{
 		Raw:    b,
 		String: string(b),
