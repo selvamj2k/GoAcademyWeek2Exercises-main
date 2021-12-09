@@ -1,50 +1,60 @@
-INFO2021/12/09 07:02:13 Read start up parameters
-INFO2021/12/09 07:02:13 command line arguments: 3 , params1 store,  params2 --port,  params3 8000
-INFO2021/12/09 07:02:13 Port number 8000
-INFO2021/12/09 07:02:13 command line arguments: 3 
-INFO2021/12/09 07:02:13 Starting server
-INFO2021/12/09 07:02:30 Read start up parameters
-INFO2021/12/09 07:03:00 Read start up parameters
-INFO2021/12/09 07:03:00 Start up parameter missing. Exit code 1
-INFO2021/12/09 07:25:20 Read start up parameters
-INFO2021/12/09 07:25:20 Length of start up parameters: 2 
-INFO2021/12/09 07:25:20 Start up parameter missing. Exit code 1
-INFO2021/12/09 07:25:26 Read start up parameters
-INFO2021/12/09 07:25:26 Length of start up parameters: 3 
-INFO2021/12/09 07:25:26 Port number fetched 100000000000
-INFO2021/12/09 07:25:26 Try connecting to the passed in port%!(EXTRA int=100000000000)
-INFO2021/12/09 07:25:26 Unable to bind port %v. Exit code 2 100000000000
-INFO2021/12/09 07:26:25 Read start up parameters
-INFO2021/12/09 07:26:25 Length of start up parameters: 3 
-INFO2021/12/09 07:26:25 Port number fetched 8000
-INFO2021/12/09 07:26:25 Try connecting to the passed in port%!(EXTRA int=8000)
-INFO2021/12/09 07:26:27 Unable to bind port %v. Exit code 2 8000
-INFO2021/12/09 07:29:14 Read start up parameters
-INFO2021/12/09 07:29:14 Length of start up parameters: 3 
-INFO2021/12/09 07:29:14 Port number fetched 8000
-INFO2021/12/09 07:29:14 Try connecting to the passed in port%!(EXTRA int=8000)
-INFO2021/12/09 07:29:16 Unable to bind port 8000. Exit code 2
-INFO2021/12/09 07:30:28 Read start up parameters
-INFO2021/12/09 07:30:28 Length of start up parameters: 3 
-INFO2021/12/09 07:30:28 Port number fetched 8000
-INFO2021/12/09 07:30:28 Try connecting to the passed in port 8000
-INFO2021/12/09 07:30:31 Error in connecting to the passed in port dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
-INFO2021/12/09 07:30:31 Unable to bind port 8000. Exit code 2
-INFO2021/12/09 07:58:51 Read start up parameters
-INFO2021/12/09 07:58:51 Length of start up parameters: 3 
-INFO2021/12/09 07:58:51 Port number fetched 8000
-INFO2021/12/09 07:58:51 Try connecting to the passed in port 8000
-INFO2021/12/09 07:58:53 Error in connecting to the passed in port dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
-INFO2021/12/09 07:58:53 Unable to bind port 8000. Exit code 2
-INFO2021/12/09 08:07:37 Read start up parameters
-INFO2021/12/09 08:07:37 Length of start up parameters: 3 
-INFO2021/12/09 08:07:37 Port number fetched 8000
-INFO2021/12/09 08:07:37 Try connecting to the passed in port 8000
-INFO2021/12/09 08:07:39 Error in connecting to the passed in port Get "http://localhost:8000": dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
-INFO2021/12/09 08:07:39 Unable to bind port 8000. Exit code 2
-INFO2021/12/09 08:10:25 Read start up parameters
-INFO2021/12/09 08:10:25 Length of start up parameters: 3 
-INFO2021/12/09 08:10:25 Port number fetched 8000
-INFO2021/12/09 08:10:25 Try connecting to the passed in port 8000
-INFO2021/12/09 08:10:27 Error in connecting to the passed in port Get "http://localhost:8000": dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
-INFO2021/12/09 08:10:27 Unable to bind port 8000. Exit code 2, <nil>
+INFO [::1]:62517:GET:/ping2021/12/09 Serve called
+INFO [::1]:62517:GET:/ping2021/12/09 Ping called
+INFO [::1]:62517:GET:/ping2021/12/09 Store Get called
+INFO [::1]:62517:GET:/store/12021/12/09 Serve called
+INFO [::1]:62517:GET:/store/12021/12/09 Store Get called
+INFO [::1]:62517:PUT:/store/12021/12/09 Serve called
+INFO [::1]:62517:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:62517:PUT:/store/22021/12/09 Serve called
+INFO [::1]:62517:PUT:/store/22021/12/09 Store Put called
+INFO [::1]:62517:GET:/store/12021/12/09 Serve called
+INFO [::1]:62517:GET:/store/12021/12/09 Store Get called
+INFO [::1]:62517:DELETE:/store/12021/12/09 Serve called
+INFO [::1]:62517:DELETE:/store/12021/12/09 Store Delete called
+INFO [::1]:62517:GET:/store/12021/12/09 Serve called
+INFO [::1]:62517:GET:/store/12021/12/09 Store Get called
+INFO [::1]:62529:PUT:/store/12021/12/09 Serve called
+INFO [::1]:62529:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:62529:DELETE:/store/12021/12/09 Serve called
+INFO [::1]:62529:DELETE:/store/12021/12/09 Store Delete called
+INFO [::1]:62529:GET:/store/12021/12/09 Serve called
+INFO [::1]:62529:GET:/store/12021/12/09 Store Get called
+INFO [::1]:62529:PUT:/store/12021/12/09 Serve called
+INFO [::1]:62529:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:62529:PUT:/store/22021/12/09 Serve called
+INFO [::1]:62529:PUT:/store/22021/12/09 Store Put called
+INFO [::1]:62529:PUT:/store/32021/12/09 Serve called
+INFO [::1]:62529:PUT:/store/32021/12/09 Store Put called
+INFO [::1]:62529:GET:/store/32021/12/09 Serve called
+INFO [::1]:62529:GET:/store/32021/12/09 Store Get called
+INFO [::1]:62529:GET:/store/22021/12/09 Serve called
+INFO [::1]:62529:GET:/store/22021/12/09 Store Get called
+INFO [::1]:62529:GET:/store/12021/12/09 Serve called
+INFO [::1]:62529:GET:/store/12021/12/09 Store Get called
+INFO [::1]:62529:DELETE:/store/22021/12/09 Serve called
+INFO [::1]:62529:DELETE:/store/22021/12/09 Store Delete called
+INFO [::1]:62529:GET:/store/22021/12/09 Serve called
+INFO [::1]:62529:GET:/store/22021/12/09 Store Get called
+INFO [::1]:62529:GET:/store/32021/12/09 Serve called
+INFO [::1]:62529:GET:/store/32021/12/09 Store Get called
+INFO [::1]:62529:GET:/store/12021/12/09 Serve called
+INFO [::1]:62529:GET:/store/12021/12/09 Store Get called
+INFO [::1]:51101:GET:/store/12021/12/09 Serve called
+INFO [::1]:51101:GET:/store/12021/12/09 Store Get called
+INFO [::1]:51101:GET:/store/12021/12/09 Ping called
+INFO [::1]:51101:PUT:/store/22021/12/09 Serve called
+INFO [::1]:51101:PUT:/store/22021/12/09 Store Put called
+INFO [::1]:51101:GET:/store/22021/12/09 Serve called
+INFO [::1]:51101:GET:/store/22021/12/09 Store Get called
+INFO [::1]:51101:GET:/store/12021/12/09 Serve called
+INFO [::1]:51101:GET:/store/12021/12/09 Store Get called
+INFO [::1]:51101:PUT:/store/12021/12/09 Serve called
+INFO [::1]:51101:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:51101:PUT:/store/12021/12/09 Serve called
+INFO [::1]:51101:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:51101:PUT:/store/12021/12/09 Serve called
+INFO [::1]:51101:PUT:/store/12021/12/09 Store Put called
+INFO [::1]:51101:DELETE:/store/12021/12/09 Serve called
+INFO [::1]:51101:DELETE:/store/12021/12/09 Store Delete called
+INFO [::1]:51101:DELETE:/store/12021/12/09 Serve called
+INFO [::1]:51101:DELETE:/store/12021/12/09 Store Delete called

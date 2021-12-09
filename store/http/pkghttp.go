@@ -38,3 +38,5 @@ func GetHTTPStoreUser(resp http.ResponseWriter, req *http.Request) (string, erro
 
 	return username, nil
 }
+
+// Handlers

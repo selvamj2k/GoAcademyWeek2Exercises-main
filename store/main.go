@@ -9,89 +9,78 @@ import (
 	"strconv"
 )
 
-const (
-	root     = "/"
-	pingURL  = "/ping"
-	ConnHost = "localhost"
-)
-
-var logins = map[string]string{
-	"user_a": "passwordA",
-	"user_b": "passwordB",
-	"user_c": "passwordC",
-	"admin":  "Password1",
-}
-
 func main() {
 
-	pkgloggers.SetupLoggers()
-	pkgloggers.InfoLogger.Println("Read start up parameters")
-	pkgloggers.InfoLogger.Printf("Length of start up parameters: %v ", len(os.Args))
+	pkgloggers.SetupStoreLogger()
+	pkgloggers.StoreLogger.Println("Read start up parameters")
+	port := GetPort(os.Args)
 
-	if len(os.Args) >= 3 {
-		v, err := strconv.Atoi(os.Args[2])
+	pkgloggers.StoreLogger.Println("Starting server")
+	fmt.Println("Starting Server")
+
+	http.HandleFunc("/ping", ping)
+	http.HandleFunc("/store/", serveStore)
+	http.HandleFunc("/list", pkgstores.HandleStoreListMethod)
+
+	//check port for binding
+	pkgloggers.StoreLogger.Printf("Try connecting to the passed in port %v", port)
+
+	//_, err := net.Dial("tcp", ConnHost+":"+  strconv.Itoa(v))
+	//_, err := http.Get("http://" + ConnHost + ":" + strconv.Itoa(v))
+	err := http.ListenAndServe(":"+port, nil)
+
+	if err != nil {
+		pkgloggers.StoreLogger.Printf("Error in connecting to the passed in port %v", err)
+		pkgloggers.StoreLogger.Printf("Unable to bind port %v. Exit code 2", port)
+		os.Exit(2)
+	}
+
+}
+
+func GetPort(args []string) string {
+	pkgloggers.StoreLogger.Printf("Length of start up parameters: %v ", len(args))
+
+	if len(args) >= 3 {
+		v, err := strconv.Atoi(args[2])
 		if err != nil || v <= 0 {
-			pkgloggers.InfoLogger.Println("Start up parameter not valid. Exit code 1")
+			pkgloggers.StoreLogger.Println("Start up parameter not valid. Exit code 1")
 			os.Exit(1)
 		} else {
-			//check port for binding
-			pkgloggers.InfoLogger.Printf("Port number fetched %v", v)
-			pkgloggers.InfoLogger.Printf("Try connecting to the passed in port %v", v)
-
-			//_, err := net.Dial("tcp", ConnHost+":"+  strconv.Itoa(v))
-			_, err := http.Get("http://" + ConnHost + ":" + strconv.Itoa(v))
-
-			pkgloggers.InfoLogger.Printf("Error in connecting to the passed in port %v", err)
-			if err != nil {
-				pkgloggers.InfoLogger.Printf("Unable to bind port %v. Exit code 2", v)
-				os.Exit(2)
-			}
+			return args[2]
 		}
 	} else {
-		pkgloggers.InfoLogger.Println("Start up parameter missing. Exit code 1")
+		pkgloggers.StoreLogger.Println("Start up parameter missing. Exit code 1")
 		os.Exit(1)
 	}
 
-	pkgloggers.InfoLogger.Println("Starting server")
-	fmt.Println("Starting Server")
-
-	http.HandleFunc(root, serve)
-	//http.ListenAndServe(":8000", nil)
-	http.ListenAndServe(":"+os.Args[3], nil)
-
-	fmt.Println("Server available")
-
+	return args[2]
 }
 
-func serve(resp http.ResponseWriter, req *http.Request) {
+func serveStore(resp http.ResponseWriter, req *http.Request) {
 
-	pkgloggers.InfoLogger.Println("IP:", req.RemoteAddr, "HTTP Method:", req.Method, "URL:", req.URL.String())
-
+	pkgloggers.SetupInfoLogger(req)
+	pkgloggers.InfoLogger.Println("Serve called")
 	pkgloggers.StoreLogger.Println("Request URL", req.URL.String())
-	if req.URL.String() == pingURL {
-		ping(resp, req)
-	}
 
 	switch req.Method {
 	case http.MethodPut:
+		pkgloggers.InfoLogger.Println("Store Put called")
 		pkgstores.HandleStorePutMethod(resp, req)
 	case http.MethodGet:
+		pkgloggers.InfoLogger.Println("Store Get called")
 		pkgstores.HandleStoreGetMethod(resp, req)
+	case http.MethodDelete:
+		pkgloggers.InfoLogger.Println("Store Delete called")
+		pkgstores.HandleStoreDeleteMethod(resp, req)
 	}
-
 }
 
 func ping(resp http.ResponseWriter, req *http.Request) {
+	pkgloggers.InfoLogger.Println("Ping called")
 	switch req.Method {
 	case http.MethodGet:
 		resp.WriteHeader(http.StatusOK)
 		resp.Header().Set("Content-Type", "text/plain")
-		//jasonData, err := json.Marshal([]string{"pong"})
-		//if err != nil {
-		//	http.Error(resp, "Error", http.StatusInternalServerError)
-		//	return
-		//}
-		//resp.Write(jasonData)
 		pong := "pong"
 		resp.Write([]byte(pong))
 		return
