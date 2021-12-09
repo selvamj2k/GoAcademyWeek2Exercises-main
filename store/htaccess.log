@@ -1,28 +1,50 @@
-INFO2021/12/07 23:45:51 Starting server
-INFO2021/12/07 23:45:54 IP: [::1]:57641 HTTP Method: PUT URL: /store/2
-INFO2021/12/07 23:47:39 Starting server
-INFO2021/12/07 23:47:43 IP: [::1]:57659 HTTP Method: PUT URL: /store/2
-INFO2021/12/08 00:29:15 Starting server
-INFO2021/12/08 00:29:24 IP: [::1]:57867 HTTP Method: PUT URL: /store/2
-INFO2021/12/08 00:30:02 IP: [::1]:57867 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:36:33 Starting server
-INFO2021/12/08 00:36:42 IP: [::1]:57897 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:36:53 IP: [::1]:57899 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:43:51 Starting server
-INFO2021/12/08 00:43:57 IP: [::1]:57911 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:46:19 Starting server
-INFO2021/12/08 00:46:23 IP: [::1]:57924 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:48:05 Starting server
-INFO2021/12/08 00:48:08 IP: [::1]:57933 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:50:32 Starting server
-INFO2021/12/08 00:50:36 IP: [::1]:57951 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 00:51:13 Starting server
-INFO2021/12/08 00:51:17 IP: [::1]:57956 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 01:05:49 Starting server
-INFO2021/12/08 01:05:52 IP: [::1]:57976 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 01:07:39 Starting server
-INFO2021/12/08 01:07:43 IP: [::1]:57990 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 01:10:09 Starting server
-INFO2021/12/08 01:10:14 IP: [::1]:57997 HTTP Method: PUT URL: /store/5
-INFO2021/12/08 01:17:16 Starting server
-INFO2021/12/08 01:17:19 IP: [::1]:58009 HTTP Method: PUT URL: /store/5
+INFO2021/12/09 07:02:13 Read start up parameters
+INFO2021/12/09 07:02:13 command line arguments: 3 , params1 store,  params2 --port,  params3 8000
+INFO2021/12/09 07:02:13 Port number 8000
+INFO2021/12/09 07:02:13 command line arguments: 3 
+INFO2021/12/09 07:02:13 Starting server
+INFO2021/12/09 07:02:30 Read start up parameters
+INFO2021/12/09 07:03:00 Read start up parameters
+INFO2021/12/09 07:03:00 Start up parameter missing. Exit code 1
+INFO2021/12/09 07:25:20 Read start up parameters
+INFO2021/12/09 07:25:20 Length of start up parameters: 2 
+INFO2021/12/09 07:25:20 Start up parameter missing. Exit code 1
+INFO2021/12/09 07:25:26 Read start up parameters
+INFO2021/12/09 07:25:26 Length of start up parameters: 3 
+INFO2021/12/09 07:25:26 Port number fetched 100000000000
+INFO2021/12/09 07:25:26 Try connecting to the passed in port%!(EXTRA int=100000000000)
+INFO2021/12/09 07:25:26 Unable to bind port %v. Exit code 2 100000000000
+INFO2021/12/09 07:26:25 Read start up parameters
+INFO2021/12/09 07:26:25 Length of start up parameters: 3 
+INFO2021/12/09 07:26:25 Port number fetched 8000
+INFO2021/12/09 07:26:25 Try connecting to the passed in port%!(EXTRA int=8000)
+INFO2021/12/09 07:26:27 Unable to bind port %v. Exit code 2 8000
+INFO2021/12/09 07:29:14 Read start up parameters
+INFO2021/12/09 07:29:14 Length of start up parameters: 3 
+INFO2021/12/09 07:29:14 Port number fetched 8000
+INFO2021/12/09 07:29:14 Try connecting to the passed in port%!(EXTRA int=8000)
+INFO2021/12/09 07:29:16 Unable to bind port 8000. Exit code 2
+INFO2021/12/09 07:30:28 Read start up parameters
+INFO2021/12/09 07:30:28 Length of start up parameters: 3 
+INFO2021/12/09 07:30:28 Port number fetched 8000
+INFO2021/12/09 07:30:28 Try connecting to the passed in port 8000
+INFO2021/12/09 07:30:31 Error in connecting to the passed in port dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
+INFO2021/12/09 07:30:31 Unable to bind port 8000. Exit code 2
+INFO2021/12/09 07:58:51 Read start up parameters
+INFO2021/12/09 07:58:51 Length of start up parameters: 3 
+INFO2021/12/09 07:58:51 Port number fetched 8000
+INFO2021/12/09 07:58:51 Try connecting to the passed in port 8000
+INFO2021/12/09 07:58:53 Error in connecting to the passed in port dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
+INFO2021/12/09 07:58:53 Unable to bind port 8000. Exit code 2
+INFO2021/12/09 08:07:37 Read start up parameters
+INFO2021/12/09 08:07:37 Length of start up parameters: 3 
+INFO2021/12/09 08:07:37 Port number fetched 8000
+INFO2021/12/09 08:07:37 Try connecting to the passed in port 8000
+INFO2021/12/09 08:07:39 Error in connecting to the passed in port Get "http://localhost:8000": dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
+INFO2021/12/09 08:07:39 Unable to bind port 8000. Exit code 2
+INFO2021/12/09 08:10:25 Read start up parameters
+INFO2021/12/09 08:10:25 Length of start up parameters: 3 
+INFO2021/12/09 08:10:25 Port number fetched 8000
+INFO2021/12/09 08:10:25 Try connecting to the passed in port 8000
+INFO2021/12/09 08:10:27 Error in connecting to the passed in port Get "http://localhost:8000": dial tcp [::1]:8000: connectex: No connection could be made because the target machine actively refused it.
+INFO2021/12/09 08:10:27 Unable to bind port 8000. Exit code 2, <nil>
